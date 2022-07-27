@@ -969,3 +969,5 @@ function populate_table() {
 }
 
 populate_table();
+
+document.addEventListener("touchstart", function(){}, true);
