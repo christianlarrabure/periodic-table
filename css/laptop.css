@@ -1,0 +1,9 @@
+.main-container {
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.tabla-periodica__elemento {
+    width: 40px;
+    height: 40px;
+}

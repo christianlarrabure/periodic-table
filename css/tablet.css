@@ -1,0 +1,68 @@
+.propiedades {
+    display: flex;
+    margin: 0 auto;
+    order: 1;
+    background-color: transparent;
+    margin: 0 40px;
+    margin-top: 20px;
+    width: 100%;
+    height: 250px;
+    max-width: 800px;
+}
+.propiedades:hover .propiedades__inner, .propiedades:active .propiedades__inner {
+    transform: none;
+}
+
+.propiedades__elemento, .propiedades__card {
+    position: relative;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+}
+
+.propiedades__inner {
+    display: flex;
+    transition: none;
+    transform-style: none;
+    margin: 0 auto;
+    justify-content:center;
+}
+
+.propiedades__elemento {
+    width: 250px;
+    height: 250px;
+    background-color: var(--reactive-metals__color1);
+    border: 2px var(--reactive-metals__color2) solid;
+    cursor: pointer;
+}
+
+.propiedades__card  {
+    width: 250px;
+    height: 250px;
+    padding: 8px;
+    border: 1px solid grey;
+    background-color: gainsboro;
+    transform: none;
+    flex-grow: 1;
+}
+
+
+.tabla-periodica {
+    width: 100vw;
+}
+
+.propiedades__card__linea__key  {
+    font-size: 1.5rem;
+}
+
+.propiedades__card__linea__value  {
+    font-size: 1.2rem;
+}
+
+.propiedades__card__linea__description  {
+    font-size: 1.2rem;
+}
+
+.tabla-periodica__elemento {
+    width: 27px;
+    height: 27px;
+}
