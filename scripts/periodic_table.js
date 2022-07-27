@@ -69,6 +69,7 @@ let periodic_elements = [
         symbol: "H",
         category: "Reactive Nonmetals",
         appearance: "colorless gas",
+        description: "<b>Hydrogen</b> is the chemical element with the symbol H and atomic number 1. With a standard atomic weight of 1.008, hydrogen is the lightest element in the periodic table. Hydrogen is the most abundant chemical substance in the universe, constituting roughly 75% of all baryonic mass. Non-remnant stars are mainly composed of hydrogen in the plasma state. The most common isotope of hydrogen, termed protium (name rarely used, symbol 1H), has one proton and no neutrons.",
     },
     {
         atomic_number: 2,
@@ -77,6 +78,7 @@ let periodic_elements = [
         symbol: "He",
         category: "Noble Gases",
         appearance: "colorless gas",
+        description: "<b>Helium</b> is a chemical element with the symbol <b>He</b> and atomic number 2. It is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas, the first in the noble gas group in the periodic table. Its boiling point is the lowest among all the elements. Helium is the second lightest and second most abundant element in the observable universe (hydrogen is the lightest and most abundant). It is present at about 24% of the total elemental mass, which is more than 12 times the mass of all the heavier elements combined. Its abundance is similar to this in both the Sun and in Jupiter. This is due to the very high nuclear binding energy (per nucleon) of helium-4, with respect to the next three elements after helium. This helium-4 binding energy also accounts for why it is a product of both nuclear fusion and radioactive decay. Most helium in the universe is helium-4, the vast majority of which was formed during the Big Bang. Large amounts of new helium are being created by nuclear fusion of hydrogen in stars.",
     },
     {
         atomic_number: 3,
@@ -155,6 +157,7 @@ let periodic_elements = [
         name: "Fluorine",
         symbol: "F",
         category: "Reactive Nonmetals",
+        appearance: "gas: very pale yellow, liquid: bright yellow, solid: alpha is opaque, beta is transparent",
     },
     {
         atomic_number: 15,
@@ -162,6 +165,7 @@ let periodic_elements = [
         name: "Phosphorus",
         symbol: "P",
         category: "Reactive Nonmetals",
+        appearance: "waxy white, yellow, red, violet, black metallic-looking",
     },
     {
         atomic_number: 16,
@@ -169,6 +173,7 @@ let periodic_elements = [
         name: "Sulfur",
         symbol: "S",
         category: "Reactive Nonmetals",
+        appearance: "lemon yellow sintered microcrystals",
     },
     {
         atomic_number: 17,
@@ -176,6 +181,7 @@ let periodic_elements = [
         name: "Chlorine",
         symbol: "Cl",
         category: "Reactive Nonmetals",
+        appearance: "pale yellow-green gas",
     },
     {
         atomic_number: 34,
@@ -183,6 +189,7 @@ let periodic_elements = [
         name: "Selenium",
         symbol: "Se",
         category: "Reactive Nonmetals",
+        appearance: "grey metallic-looking, red, and vitreous black (not pictured) allotropes",
     },
     {
         atomic_number: 35,
@@ -190,6 +197,7 @@ let periodic_elements = [
         name: "Bromine",
         symbol: "Br",
         category: "Reactive Nonmetals",
+        appearance: "reddish-brown",
     },
     {
         atomic_number: 53,
@@ -197,6 +205,7 @@ let periodic_elements = [
         name: "Iodine",
         symbol: "I",
         category: "Reactive Nonmetals",
+        appearance: "lustrous metallic gray solid, black/violet liquid, violet gas",
     },
     {
         atomic_number: 10,
@@ -204,6 +213,7 @@ let periodic_elements = [
         name: "Neon",
         symbol: "Ne",
         category: "Noble Gases",
+        appearance: "colorless gas exhibiting an orange-red glow when placed in an electric field",
     },
     {
         atomic_number: 18,
@@ -211,6 +221,7 @@ let periodic_elements = [
         name: "Argon",
         symbol: "Ar",
         category: "Noble Gases",
+        appearance: "colorless gas exhibiting a lilac/violet glow when placed in an electric field",
     },
     {
         atomic_number: 36,
@@ -218,6 +229,7 @@ let periodic_elements = [
         name: "Krypton",
         symbol: "Kr",
         category: "Noble Gases",
+        appearance: "colorless gas, exhibiting a whitish glow in an electric field",
     },
     {
         atomic_number: 54,
@@ -225,6 +237,7 @@ let periodic_elements = [
         name: "Xenon",
         symbol: "Xe",
         category: "Noble Gases",
+        appearance: "colorless gas, exhibiting a blue glow when placed in an electric field",
     },
     {
         atomic_number: 86,
@@ -239,6 +252,7 @@ let periodic_elements = [
         name: "Beryllium",
         symbol: "Be",
         category: "Alkaline",
+        appearance: "white-gray metallic",
     },
     {
         atomic_number: 12,
@@ -246,6 +260,7 @@ let periodic_elements = [
         name: "Magnesium",
         symbol: "Mg",
         category: "Alkaline",
+        appearance: "shiny grey solid",
     },
     {
         atomic_number: 20,
@@ -253,6 +268,7 @@ let periodic_elements = [
         name: "Calcium",
         symbol: "Ca",
         category: "Alkaline",
+        appearance: "dull gray, silver; with a pale yellow tint",
     },
     {
         atomic_number: 38,
@@ -260,6 +276,7 @@ let periodic_elements = [
         name: "Strontium",
         symbol: "Sr",
         category: "Alkaline",
+        appearance: "silvery white metallic; with a pale yellow tint",
     },
     {
         atomic_number: 56,
@@ -267,6 +284,7 @@ let periodic_elements = [
         name: "Barium",
         symbol: "Ba",
         category: "Alkaline",
+        appearance: "silvery gray; with a pale yellow tint",
     },
     {
         atomic_number: 88,
@@ -274,6 +292,7 @@ let periodic_elements = [
         name: "Radium",
         symbol: "Ra",
         category: "Alkaline",
+        appearance: "silvery white metallic",
     },
     {
         atomic_number: 21,
@@ -929,6 +948,8 @@ function elementClick(event) {
     propiedades_category.innerText = category.full_name;
     let propiedades_appearance = document.querySelector("#propiedades__card__link")
     propiedades_appearance.innerText = element.appearance;
+    let propiedades_description = document.querySelector("#propiedades__card__description")
+    propiedades_description.innerHTML = element.description;
 
     let display = document.querySelector(".propiedades__elemento");
     display.style.backgroundColor = category.color;

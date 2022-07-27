@@ -21,12 +21,23 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .propiedades {
+    order: 1;
     margin-top: 20px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.propiedades__card__contenedor {
+    order: 3;
+    margin: 0 auto;
 }
 
 .propiedades__elemento {
@@ -64,6 +75,10 @@ html {
     text-align: end;
 }
 
+.propiedades__card__linea__description  {
+    text-align: justify;
+}
+
 .propiedades__elemento__top-container {
     display: flex;
     justify-content: space-between;
@@ -95,6 +110,8 @@ html {
 }
 
 .tabla-periodica {
+    margin: 0 auto;
+    order: 2;
     margin-top: 20px;
 }
 
