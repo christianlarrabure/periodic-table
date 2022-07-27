@@ -1,51 +1,61 @@
 let periodic_categories = [
     {
         name: "Reactive Nonmetals",
+        full_name: "Reactive Nonmetals",
         color: "rgb(140 237 140)",
         border_color: "#40916c",
     },
     {
         name: "Noble Gases",
+        full_name: "Noble Gases",
         color: "hsl(300deg 43% 82%)",
         border_color: "rgb(141 74 151)",
     },
     {
         name: "Alkali",
+        full_name: "Alkali Metals",
         color: "hsl(48deg 77% 64%)",
         border_color: "hsl(48deg 49% 30%)",
     },
     {
         name: "Alkaline",
+        full_name: "Alkaline Earth Metals",
         color: "hsl(60deg 83% 67%)",
         border_color: "hsl(60deg 36% 32%)",
     },
     {
         name: "Transition",
+        full_name: "Transition Metals",
         color: "hsl(12deg 87% 85%)",
         border_color: "hsl(12deg 28% 67%)",
     },
     {
         name: "Post-Transition",
+        full_name: "Post-Transition Metals",
         color: "hsl(192deg, 62%, 80%)",
         border_color: "hsl(192deg 68% 24%)",
     },
     {
         name: "Metalloid",
+        full_name: "Metalloids",
         color: "hsl(165deg, 58%, 76%)",
         border_color: "hsl(165deg 71% 30%)",
     },
     {
         name: "Unknown",
+        full_name: "Unknown",
         color: "#eee",
         border_color: "#6a6a6a",
     },
     {
         name: "Lathanoid",
+        full_name: "Lathanoids",
         color: "hsl(42deg, 62%, 76%)",
         border_color: "hsl(42deg 99% 29%)",
     },
     {
         name: "Actinoid",
+        full_name: "Actinoids",
         color: "hsl(340deg, 67%, 88%)",
         border_color: "hsl(340deg 74% 52%)",
     }
@@ -58,6 +68,7 @@ let periodic_elements = [
         name: "Hydrogen",
         symbol: "H",
         category: "Reactive Nonmetals",
+        appearance: "colorless gas",
     },
     {
         atomic_number: 2,
@@ -65,6 +76,7 @@ let periodic_elements = [
         name: "Helium",
         symbol: "He",
         category: "Noble Gases",
+        appearance: "colorless gas",
     },
     {
         atomic_number: 3,
@@ -72,6 +84,7 @@ let periodic_elements = [
         name: "Lithium",
         symbol: "Li",
         category: "Alkali",
+        appearance: "silvery-white",        
     },
     {
         atomic_number: 11,
@@ -79,6 +92,7 @@ let periodic_elements = [
         name: "Sodium",
         symbol: "Na",
         category: "Alkali",
+        appearance: "silvery white metallic",
     },
     {
         atomic_number: 19,
@@ -86,6 +100,7 @@ let periodic_elements = [
         name: "Potassium",
         symbol: "K",
         category: "Alkali",
+        appearance: "silvery gray",
     },
     {
         atomic_number: 37,
@@ -93,6 +108,7 @@ let periodic_elements = [
         name: "Rubidium",
         symbol: "Rb",
         category: "Alkali",
+        appearance: "grey white",
     },
     {
         atomic_number: 55,
@@ -100,6 +116,7 @@ let periodic_elements = [
         name: "Caesium",
         symbol: "Cs",
         category: "Alkali",
+        appearance: "pale gold",
     },
     {
         atomic_number: 87,
@@ -114,6 +131,7 @@ let periodic_elements = [
         name: "Carbon",
         symbol: "C",
         category: "Reactive Nonmetals",
+        appearance: "black, metallic-looking",
     },
     {
         atomic_number: 7,
@@ -121,6 +139,7 @@ let periodic_elements = [
         name: "Nitrogen",
         symbol: "N",
         category: "Reactive Nonmetals",
+        appearance: "colorless gas",
     },
     {
         atomic_number: 8,
@@ -128,6 +147,7 @@ let periodic_elements = [
         name: "Oxygen",
         symbol: "O",
         category: "Reactive Nonmetals",
+        appearance: "colorless gas (solid or liquid: pale blue)",
     },
     {
         atomic_number: 9,
@@ -896,7 +916,6 @@ function elementClick(event) {
     let atomic_number = Number(event.target.getAttribute("element"));
     let element = getElementByAtomicNumber(atomic_number);
     let category = getPeriodicCategory(element.category);
-    console.log(element.category);
     
     let display_atomic_number = document.querySelector(".propiedades__elemento__top-container__atomic-number");
     display_atomic_number.innerText = element.atomic_number;
@@ -906,6 +925,10 @@ function elementClick(event) {
     display_atomic_symbol.innerText = element.symbol;
     let display_atomic_name = document.querySelector(".propiedades__elemento__name");
     display_atomic_name.innerText = element.name;
+    let propiedades_category = document.querySelector("#propiedades__card__series")
+    propiedades_category.innerText = category.full_name;
+    let propiedades_appearance = document.querySelector("#propiedades__card__link")
+    propiedades_appearance.innerText = element.appearance;
 
     let display = document.querySelector(".propiedades__elemento");
     display.style.backgroundColor = category.color;

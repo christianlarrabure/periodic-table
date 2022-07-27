@@ -22,8 +22,10 @@ html {
 }
 
 .propiedades {
+    margin-top: 20px;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -35,8 +37,31 @@ html {
     cursor: pointer;
 }
 
-.propiedades__elemento:hover {
-    background-color: var(--reactive-metals__color3);
+.propiedades__card  {
+    width: 250px;
+    padding: 8px;
+    margin-top: 20px;
+    border: 1px solid grey;
+    background-color: gainsboro;
+}
+
+.propiedades__card__linea  {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.propiedades__card__linea__key  {
+    font-weight: 700;
+    text-align: center;
+}
+
+.propiedades__card__linea__value  {
+    flex-grow: 1;
+    text-align: end;
 }
 
 .propiedades__elemento__top-container {
@@ -61,13 +86,6 @@ html {
     font-size: 8rem;
     text-align: center;
     font-weight: 900;
-}
-
-.propiedades__elemento__electron-configuration {
-    font-size: 2rem;
-    font-weight: 300;
-    margin-top: 20px;
-    margin-left: 8px;
 }
 
 .propiedades__elemento__name {
