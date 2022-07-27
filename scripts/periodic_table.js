@@ -78,7 +78,7 @@ let periodic_elements = [
         symbol: "He",
         category: "Noble Gases",
         appearance: "colorless gas",
-        description: "<b>Helium</b> is a chemical element with the symbol <b>He</b> and atomic number 2. It is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas, the first in the noble gas group in the periodic table. Its boiling point is the lowest among all the elements. Helium is the second lightest and second most abundant element in the observable universe (hydrogen is the lightest and most abundant). It is present at about 24% of the total elemental mass, which is more than 12 times the mass of all the heavier elements combined. Its abundance is similar to this in both the Sun and in Jupiter. ",
+        description: "<b>Helium</b> is a chemical element with the symbol <b>He</b> and atomic number 2. It is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas, the first in the noble gas group in the periodic table. Its boiling point is the lowest among all the elements. Helium is the second lightest and second most abundant element in the observable universe (hydrogen is the lightest and most abundant).",
     },
     {
         atomic_number: 3,
@@ -949,7 +949,11 @@ function elementClick(event) {
     let propiedades_appearance = document.querySelector("#propiedades__card__link")
     propiedades_appearance.innerText = element.appearance;
     let propiedades_description = document.querySelector("#propiedades__card__description")
-    propiedades_description.innerHTML = element.description;
+    if (element.description != undefined){
+        propiedades_description.innerHTML = element.description;
+    } else {
+        propiedades_description.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec urna convallis, fermentum velit et, efficitur felis. Curabitur rhoncus facilisis felis sit amet sodales. Nulla ligula orci, condimentum vitae tortor ut, ornare consequat justo. Duis urna justo, sodales at ipsum eu, lacinia aliquet ligula.";
+    }
 
     let display = document.querySelector(".propiedades__elemento");
     display.style.backgroundColor = category.color;
