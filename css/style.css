@@ -53,7 +53,7 @@ html {
     cursor: pointer;
 }
 
-.propiedades:active .propiedades__inner {
+.propiedades:hover .propiedades__inner, .propiedades:active .propiedades__inner {
     transform: rotateY(180deg);
 }
 
